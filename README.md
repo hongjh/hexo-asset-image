@@ -1,7 +1,7 @@
 # hexo-asset-image
 
 
-Give asset image in hexo a absolutely path automatically
+Give asset image in hexo a absolutely path automatically.
 
 # Usege
 
