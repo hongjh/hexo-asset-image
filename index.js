@@ -1,7 +1,11 @@
 'use strict';
 var cheerio = require('cheerio');
 
-// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string
+/**
+ * 获得字符串中的第n次出现位置
+ *
+ * @see http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string
+ */
 function getPosition(str, m, i) {
   return str.split(m, i).join(m).length;
 }
@@ -10,6 +14,7 @@ hexo.extend.filter.register('after_post_render', function(data){
   var config = hexo.config;
   if(config.post_asset_folder){
     var link = data.permalink;
+	// 获取第3次出现 / 字符位置
 	var beginPos = getPosition(link, '/', 3) + 1;
 	// In hexo 3.1.1, the permalink of "about" page is like ".../about/index.html".
 	var endPos = link.lastIndexOf('/') + 1;
